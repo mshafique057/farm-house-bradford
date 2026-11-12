@@ -1,4 +1,4 @@
-# Farm House Bradford Restaurant – Coming Soon
+# BAO:G – The Dining Residence (Coming Soon)
 
 React + Vite coming soon page (responsive, plain CSS, no backend).
 
@@ -15,4 +15,4 @@ GitHub par push karein, Vercel khud Vite detect kar leta hai
 
 ## Text badalna
 `src/App.jsx` ke upar `SITE` aur `NAV_ITEMS` mein text aur menu badal sakte hain.
-Rang `src/index.css` ke `:root` mein hain.
+Rang `src/index.css` ke `:root` mein hain. Logo: `public/emblem.png`.

@@ -4,14 +4,16 @@ import { useState } from 'react';
 // Yahan se text / menu badal sakte hain.
 // ---------------------------------------------------------------
 const SITE = {
-  name: 'Farm House',
-  subtitle: 'Bradford · Restaurant',
-  fullName: 'Farm House Bradford Restaurant',
+  name: 'BAO:G',
+  arabic: 'باؤجی',
+  subtitle: 'The Dining Residence',
+  fullName: 'BAO:G – The Dining Residence',
   tag: 'Under construction',
-  headline: 'Our website is coming soon.',
-  text: 'Farm House Bradford Restaurant is getting its website ready. Please check back soon.',
+  badge: 'Coming Soon',
+  text: 'Our website is being prepared. Please check back soon.',
 };
 
+// Menu pehle jaisa hi hai.
 const NAV_ITEMS = [
   'Home',
   'About Us',
@@ -22,24 +24,21 @@ const NAV_ITEMS = [
   'Contact Us',
 ];
 
-function Wheat({ size = 42 }) {
+function Ornament() {
   return (
-    <svg
-      width={size * 0.72}
-      height={size}
-      viewBox="0 0 40 80"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M20 78V18" stroke="#4F6B3A" strokeWidth="3" fill="none" />
-      <g fill="#C9962F">
-        <ellipse cx="20" cy="12" rx="5" ry="10" />
-        <ellipse cx="11" cy="28" rx="5" ry="10" transform="rotate(-35 11 28)" />
-        <ellipse cx="29" cy="28" rx="5" ry="10" transform="rotate(35 29 28)" />
-        <ellipse cx="11" cy="46" rx="5" ry="10" transform="rotate(-35 11 46)" />
-        <ellipse cx="29" cy="46" rx="5" ry="10" transform="rotate(35 29 46)" />
-      </g>
-    </svg>
+    <div className="ornament" aria-hidden="true">
+      <span className="ornament-line" />
+      <svg width="30" height="30" viewBox="0 0 30 30" focusable="false">
+        <g fill="none" stroke="currentColor" strokeWidth="1.6">
+          <path d="M15 2c3 5 3 8 0 13-3-5-3-8 0-13z" />
+          <path d="M15 28c3-5 3-8 0-13-3 5-3 8 0 13z" />
+          <path d="M2 15c5-3 8-3 13 0-5 3-8 3-13 0z" />
+          <path d="M28 15c-5-3-8-3-13 0 5 3 8 3 13 0z" />
+        </g>
+        <circle cx="15" cy="15" r="2.2" fill="currentColor" />
+      </svg>
+      <span className="ornament-line" />
+    </div>
   );
 }
 
@@ -59,7 +58,7 @@ export default function App() {
       <header className="site-header">
         <div className="container header-inner">
           <div className="brand">
-            <Wheat />
+            <img className="brand-logo" src="/emblem.png" alt="" width="52" height="52" />
             <div>
               <div className="brand-name">{SITE.name}</div>
               <div className="brand-sub">{SITE.subtitle}</div>
@@ -103,18 +102,23 @@ export default function App() {
         </div>
       </header>
 
-      <main className="container hero">
-        <div className="hero-text">
-          <span className="tag">{SITE.tag}</span>
-          <h1>{SITE.headline}</h1>
-          <p>{SITE.text}</p>
-        </div>
-
-        <div className="sign" role="img" aria-label="Coming soon sign">
-          <div className="sign-top">{SITE.fullName.replace(' Restaurant', '').toUpperCase()}</div>
-          <div className="sign-main">Coming Soon</div>
-          <div className="sign-rule" />
-        </div>
+      <main className="hero">
+        <img
+          className="hero-emblem"
+          src="/emblem.png"
+          alt="BAO:G emblem"
+          width="210"
+          height="210"
+        />
+        <p className="hero-arabic" lang="ur" dir="rtl">{SITE.arabic}</p>
+        <h1 className="hero-title">{SITE.name}</h1>
+        <p className="hero-sub">{SITE.subtitle}</p>
+        <Ornament />
+        <p className="hero-badge">{SITE.badge}</p>
+        <p className="hero-note">
+          <span className="visually-hidden">{SITE.tag}. </span>
+          {SITE.text}
+        </p>
       </main>
 
       <footer className="site-footer">
