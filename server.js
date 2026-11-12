@@ -8,7 +8,7 @@ const DB_FILE = './cms_database.json';
 
 app.get('/api/site', (req, res) => {
   if (fs.existsSync(DB_FILE)) return res.json(JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')));
-  return res.json({ brandName: 'Farm House Bradford Restaurant', status: 'default' });
+  return res.json({ brandName: 'BAO:G The Dining Residence', status: 'default' });
 });
 
 app.post('/api/site', (req, res) => {

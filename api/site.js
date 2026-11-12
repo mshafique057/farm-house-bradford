@@ -1,5 +1,5 @@
 // Vercel Serverless Backend API (/api/site)
-let memoryStore = { brandName: "Farm House Bradford Restaurant", status: "active", updatedAt: new Date().toISOString() };
+let memoryStore = { brandName: "BAO:G The Dining Residence", status: "active", updatedAt: new Date().toISOString() };
 
 export default function handler(req, res) {
   if (req.method === 'GET') return res.status(200).json(memoryStore);
